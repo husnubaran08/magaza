@@ -1,0 +1,38 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col" style="color:rgb(250, 120, 120)">DOLAP ÜRÜNLERİ</th>
+      <th scope="col" style="color:rgb(250, 120, 120)">STOK KODU</th>
+      <th scope="col" style="color:rgb(250, 120, 120)">KOLİ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.name }}</td>
+      <td>{{ product.stockCode }}</td>
+      <td>{{ product.koli }}</td>
+    </tr>
+  </tbody>
+  <thead>
+    <tr>
+      <th scope="col" style="color:rgb(250, 120, 120)">Temizlik Ürünleri</th>
+      <th scope="col" style="color:rgb(250, 120, 120)">STOK KODU</th>
+      <th scope="col" style="color:rgb(250, 120, 120)" >KOLİ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Domestos</td>
+      <td>405746</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>Yumuşatıcı</td>
+      <td>4005474</td>
+      <td>24</td>
+    </tr>
+    
+  </tbody>
+</table>
+<button >SAYIMI ONAYLA</button>
+

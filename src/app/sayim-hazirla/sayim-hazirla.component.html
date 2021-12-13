@@ -1,0 +1,41 @@
+<p style="font-size: 35px;  padding-left:20px; color:red " class="col">Sayım</p>
+<p style="font-size: 25px; padding-left:50px; padding-top: 10px;"  class="col"> Fatih Kocaman</p>
+<p style="font-size: 25px; padding-top:10px;" class="col">18.11.2021</p>
+<br>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Dolap Ürünleri</th>
+      <th scope="col">Stok Kodu</th>
+      <th scope="col">+</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.name }}</td>
+      <td>{{ product.stockCode }}</td>
+      <td><button class="btn btn-danger">+</button></td>
+    </tr>
+  </tbody>
+  <thead>
+    <tr>
+      <th scope="col">Temizlik Ürünleri</th>
+      <th scope="col">Stok Kodu</th>
+      <th scope="col" >+</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Domestos</td>
+      <td>405746</td>
+      <td><button class="btn btn-danger">+</button></td>
+    </tr>
+    <tr>
+      <td>Yumuşatıcı</td>
+      <td>4005474</td>
+      <td ><button class="btn btn-danger">+</button></td>
+    </tr>
+    
+  </tbody>
+</table>
+

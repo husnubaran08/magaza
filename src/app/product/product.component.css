@@ -1,0 +1,17 @@
+.search {
+  background-image: url("src/assets/searchicon.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  font-size: 17px;
+  border: 1px solid rgb(156, 155, 155);
+  padding: 10px;
+  padding-left: 40px;
+  width: 96%;
+  background-color: white;
+  margin-left:10px;
+}
+
+
+hr.rounded {
+  border-top: 2px solid rgb(117, 117, 117);
+}

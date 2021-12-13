@@ -1,0 +1,29 @@
+img{
+    padding-top: 15px;
+    padding-bottom:15px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    border-radius:50%;
+}
+.name {
+    text-align: center;
+    line-height: 35px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    color:rgb(32, 32, 32);
+   }
+.unvan{
+    text-align: center;
+    line-height: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+    color: rgb(65, 64, 64);
+}
+button{
+    position: relative;
+    margin-left: 640px;
+    margin-top: 20px;
+}

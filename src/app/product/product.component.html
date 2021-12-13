@@ -1,0 +1,38 @@
+<h2
+  style="
+    color: rgb(235, 29, 29);
+    text-align: center;
+    font-size: 30px;
+    margin-top:15px;
+    margin-bottom:15px;
+  "
+>
+  ÜRÜN İŞLEMLERİ
+</h2>
+
+<div class="form-group">
+  <input
+    type="text"
+    class="search"
+    id="productName"
+    placeholder="STOK KODU İLE ARA"
+  />
+</div>
+<table class = "table table-striped" style="margin-left: 10px;">
+  <thead>
+    <tr>
+      <th>ÜRÜN İSMİ</th>
+      <th>STOK KODU</th>
+      <th>SİL</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.name }}</td>
+        <td>{{ product.stockCode }}</td>
+        <td><button (click) = "deleteProduct(product.barkod)" class="btn btn-danger">X</button></td>
+      </tr>
+  </tbody>
+</table>
+
+<app-createProduct></app-createProduct>
