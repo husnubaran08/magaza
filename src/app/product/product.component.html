@@ -12,12 +12,15 @@
 
 <div class="form-group">
   <input
-    type="text"
-    class="search"
-    id="productName"
+    type="search"
+    (ngModelChange) = "searchProduct(key.value)" #key="ngModel" ngModel 
+    name="key"
+    id="searchName"
+    class="form-control search"
     placeholder="STOK KODU İLE ARA"
   />
 </div>
+
 <table class = "table table-striped" style="margin-left: 10px;">
   <thead>
     <tr>
@@ -30,9 +33,67 @@
       <tr *ngFor="let product of products">
         <td>{{ product.name }}</td>
         <td>{{ product.stockCode }}</td>
-        <td><button (click) = "deleteProduct(product.barkod)" class="btn btn-danger">X</button></td>
+        <td><a (click)="onDeleteProduct(product.barkod)" class="btn btn-secondary tooltips" data-placement="top" data-original-title="Delete">X</a></td>
       </tr>
   </tbody>
 </table>
 
-<app-createProduct></app-createProduct>
+<div class="row">
+  <h2 style="background-color: #f1f1f1; font-size: 24px; margin-left:10px; ">ÜRÜN EKLE</h2>
+  <form #addForm="ngForm" (ngSubmit)="onSubmit(addForm)">
+    <div class="form-group">
+      <input type="text" class="form-control" ngModel name="barkod" placeholder="BARKOD" required/>
+    </div>
+    <br />
+    <div class="form-group">
+      <input type="text" class="form-control" ngModel name="name" placeholder="ÜRÜN ADI" required/>
+    </div>
+    <br />
+    <div class="form-group">
+      <input type="text" class="form-control" ngModel name="stockCode"placeholder="STOK KODU" required/>
+    </div>
+    <br />
+    <div class="form-group">
+      <input type="text" class="form-control" ngModel name="koli" placeholder="KOLİ ADEDİ" required/>
+    </div>
+    <br />
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        ngModel
+        name="reyon"
+        placeholder="REYON"
+        required
+      />
+    </div>
+    <br />
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        ngModel
+        name="price"
+        placeholder="FİYAT"
+        required
+      />
+    </div>
+    <br />
+    
+    <button
+      type="submit"
+      style="
+        padding: 15px;
+        background-color: red;
+        margin-left: 10px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        color: white;
+      "
+      [disabled]="addForm.invalid"
+    >
+      ÜRÜN EKLE
+    </button>
+  </form>
+</div>
+

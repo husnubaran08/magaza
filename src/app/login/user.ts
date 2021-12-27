@@ -1,15 +1,10 @@
 export class User {
- 
-    tc: number;
-    password: number;
-    name:string;
-
-    constructor(tc: number,password: number,name:string){
-  
+    tc: string;
+    password: string;
+    
+    constructor(tc: string,password: string){
         this.tc=tc;
-       this.name=name;
         this.password=password;
-   
     }
 }
 

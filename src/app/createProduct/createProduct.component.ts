@@ -9,24 +9,13 @@ import { ProductService } from '../services/product.service';
   templateUrl: './createProduct.component.html',
   styleUrls: ['./createProduct.component.css']
 })
-export class CreateProductComponent implements OnInit {
-  product: Product = new Product(0,0,0,"","",0);
+export class CreateProductComponent {
   constructor(private productService:ProductService, private router:Router) { }
 
-  ngOnInit() {
-  }
+ 
   
-  saveProduct(){
-    this.productService.createProduct(this.product).subscribe(data => { 
-      this.goToProductList();
-    });
-  }
-  goToProductList(){
-    this.router.navigate(['/product']);
-  }
-  onSubmit(){
-      this.saveProduct();
-  }
+ 
+  
 
   
   

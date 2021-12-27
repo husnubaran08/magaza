@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router'; 
+import { Employee } from '../home/employee';
+import { AccountService } from '../services/account.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,16 +10,17 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
  
-  Email  = 'beyzatarhn05@gmail.com';
-  password = 12345;
+  model:Employee = new Employee(0,"","","","",0); 
   
 
-  constructor(private router: Router) {
-   }
+  constructor(private router: Router, private accountService:AccountService) { }
 
   ngOnInit(): void {
   }
-  
+  login(form:NgForm){
+    this.accountService.login(this.model)
+  }
+
   goToHome() {
     this.router.navigateByUrl('/home');
   };

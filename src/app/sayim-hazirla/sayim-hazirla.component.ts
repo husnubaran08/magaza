@@ -1,6 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../product/product';
 import { ProductService } from '../services/product.service';
+import { SayimService } from '../services/sayim.service';
 
 @Component({
   selector: 'app-sayim-hazirla',
@@ -9,24 +11,34 @@ import { ProductService } from '../services/product.service';
 })
 export class SayimHazirlaComponent implements OnInit {
   
-  products: Product[] = [
-    {"barkod":1,"koli":30,"name":"Kinder Pingui","price":13,"reyon":"Dolap ürünleri","stockCode":1011227},
-    {"barkod":2,"koli":30,"name":"Sütaş Süt","price":13,"reyon":"Dolap ürünleri","stockCode":1004575},
-    {"barkod":1,"koli":30,"name":"Sütaş Kaşar Peynir","price":13,"reyon":"bakliyat ürünleri","stockCode":1025747},
-    {"barkod":2,"koli":30,"name":"Kavurma","price":13,"reyon":"dolap ürünleri","stockCode":1004175}
-  ];
-  constructor(private productService: ProductService) {
+  public products: Product[] = [];
+  constructor(private productService: ProductService,private sayimService:SayimService) {}
 
-   }
-
-  ngOnInit(): void {
-    this.getProducts();
+  ngOnInit() {
+    this.getProductList();
   }
 
-  public getProducts(){
-    this.productService.getProductList().subscribe(data => {
-      this.products = data;
-    })
+  public getProductList():void{
+    this.productService.getProductList().subscribe(
+      (response: Product[]) => {
+        this.products = response;
+        console.log(this.products);
+      },
+      (error: HttpErrorResponse)=>{
+        alert(error.message);
+      }
+    );
   }
 
+  public onCreateSayim(product : Product): void{
+    this.sayimService.createSayim(product).subscribe(
+      (response: Product) => {
+        console.log(response);
+        this.getProductList();
+      },
+      (error: HttpErrorResponse)=> {
+        alert(error.message);
+      }
+    );
+  }
 }

@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
  
 
   employees : Employee[] = [
-    {id:1, tc:12345678910, name:" Ahmet Sayrantepe ", unvan:"Mağaza Personeli", password:123, img:"assets/pp.png"}  ]
+    {id:1, tc:"12345678910", name:" Ahmet Sayrantepe ", unvan:"Mağaza Personeli", password:"123", sayim:0}  ]
     
  
   constructor() { }

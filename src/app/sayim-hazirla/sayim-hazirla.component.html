@@ -5,7 +5,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Dolap Ürünleri</th>
+      <th scope="col">Ürünler</th>
       <th scope="col">Stok Kodu</th>
       <th scope="col">+</th>
     </tr>
@@ -14,28 +14,8 @@
     <tr *ngFor="let product of products">
       <td>{{ product.name }}</td>
       <td>{{ product.stockCode }}</td>
-      <td><button class="btn btn-danger">+</button></td>
+      <td><button (click)="onCreateSayim(product)"class="btn btn-danger">+</button></td>
     </tr>
-  </tbody>
-  <thead>
-    <tr>
-      <th scope="col">Temizlik Ürünleri</th>
-      <th scope="col">Stok Kodu</th>
-      <th scope="col" >+</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Domestos</td>
-      <td>405746</td>
-      <td><button class="btn btn-danger">+</button></td>
-    </tr>
-    <tr>
-      <td>Yumuşatıcı</td>
-      <td>4005474</td>
-      <td ><button class="btn btn-danger">+</button></td>
-    </tr>
-    
-  </tbody>
+  </tbody>  
 </table>
 

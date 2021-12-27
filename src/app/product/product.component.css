@@ -15,3 +15,9 @@
 hr.rounded {
   border-top: 2px solid rgb(117, 117, 117);
 }
+
+.form-control {
+  width: 96%;
+  padding: 10px;
+  margin-left:10px;
+}
