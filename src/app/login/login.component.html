@@ -7,19 +7,19 @@
 <div class="login-box">
     <h2 style="color: rgb(58, 57, 57); font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">SİSTEME GİRİŞ </h2>
     <br>
-    <form #loginForm="ngForm"  (ngSubmit)="login(loginForm)" class="form-signin">
+    <form #loginForm="ngForm" (ngSubmit)="login()" class="form-signin">
       <div class="user-box">
-        <input type="number" #userName="ngModel" [(ngModel)]="model.tc" name="" required="" placeholder="Personal Sicil Numaranız">
+        <input type="number" required="" placeholder="Personal Sicil Numaranız" name="tc" [(ngModel)]="employee.tc">
       </div>
       <br>
       <div class="user-box">
-        <input type="password" #password="ngModel" [(ngModel)]="model.password" name="" required="" placeholder="Sifre">
+        <input type="password" required="" placeholder="Sifre" name="password" [(ngModel)]="employee.password">
       </div>
       <br>
       <button class="forgot" (click)="forgotPassword()">Şifremi Unuttum</button>
       <br>
       <br>
-      <button type="submit" class="login" (click)="goToHome()" >Giriş</button>
+      <button type="submit" class="login">Giriş</button>
     </form>
 </div>
 <div style="color:rgb(233, 197, 197)">

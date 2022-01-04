@@ -14,9 +14,8 @@ import { HttpClientModule} from '@angular/common/http';
 import { CreateProductComponent } from './createProduct/createProduct.component';
 import { FormsModule } from '@angular/forms';
 import { SayimComponent } from './sayim/sayim.component';
-import { AccountService } from './services/account.service';
 import { ProductService } from './services/product.service';
-import { LoginGuard } from './login/login.guard';
+
 
 @NgModule({
   declarations: [				
@@ -37,7 +36,7 @@ import { LoginGuard } from './login/login.guard';
     HttpClientModule,
     FormsModule
   ],
-  providers: [AccountService,ProductService,LoginGuard],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

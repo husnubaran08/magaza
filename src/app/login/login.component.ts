@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router'; 
 import { Employee } from '../home/employee';
-import { AccountService } from '../services/account.service';
+import { LoginServiceService } from '../services/loginService.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,20 +10,22 @@ import { AccountService } from '../services/account.service';
 })
 export class LoginComponent implements OnInit {
  
-  model:Employee = new Employee(0,"","","","",0); 
+  employee = new Employee(0,"","","","",0); 
   
 
-  constructor(private router: Router, private accountService:AccountService) { }
+  constructor(private router: Router, private service:LoginServiceService) { }
 
   ngOnInit(): void {
   }
-  login(form:NgForm){
-    this.accountService.login(this.model)
+  login(){
+    this.service.loginEmployeeFromRemote(this.employee).subscribe(
+      data =>{
+        console.log("response received");
+        this.router.navigateByUrl('/home')
+      },
+      error => console.log("exception occured")
+    );
   }
-
-  goToHome() {
-    this.router.navigateByUrl('/home');
-  };
   forgotPassword(){
     this.router.navigateByUrl('/forgotPassword');
    }

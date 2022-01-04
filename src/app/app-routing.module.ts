@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { LoginGuard } from './login/login.guard';
 import { ProductComponent } from './product/product.component';
 import { RaporComponent } from './rapor/rapor.component';
 import { SayimHazirlaComponent } from './sayim-hazirla/sayim-hazirla.component';
